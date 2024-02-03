@@ -1,0 +1,124 @@
+<% layout('layouts/boilerplate') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="products-heading">PRODUCTS</h1>
+  <div class="filter-container">
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter" onchange="filterProducts()">
+      <option value="all">All</option>
+      <option value="jewelry">Jewelry</option>
+      <option value="bags">Bags</option>
+      <option value="homeappliance"> Home Appliance</option>
+    </select>
+  </div>
+<div class="container d-flex flex-wrap align-items-center">
+  <% for(let painting of paintings) { %>
+    <div class="product card h-100" style="width: 18rem; height: 20rem; " data-category="<%=painting.category%>">
+      <img class="card-img-top" height="200px" src="<%= painting.images[0].url %>" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= painting.name %></h5>
+        <h5 class="card-text"> $<%=painting.price%></h5>
+        <a href="/paintings/<%= painting._id %>" class="show">Show</a>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+</body>
+</html>
+<script>
+  function filterProducts(){
+    console.log("hey")
+    const catagory=document.getElementById('categoryFilter').value
+    const products=document.querySelectorAll('.card')
+    products.forEach(product=>{
+      console.log(product)
+      const productCategory = product.dataset.category;
+      if(catagory=="all"||productCategory==catagory){
+        product.style.display='block';
+      }
+      else{
+        product.style.display='none';
+      }
+    })
+  }
+</script>
+<style>
+  .products-heading {
+    font-size: 30px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    color: rgb(14, 40, 72);
+    text-shadow: aquamarine;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius:15px;
+    z-index:1;
+    background-color: rgb(236, 236, 226);
+  }
+  .show{
+    background-color: rgb(49, 62, 111);
+    color: aliceblue;
+    height: 30px;
+    width:170%;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 5px 110px;
+  }
+
+  .card {
+    border-radius: 8px;
+    display: flex;
+    border: 2px solid #729da17e;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 7px;
+    width: 180px;
+    height: 400px;
+    object-fit: fill;
+    transition: transform 200ms linear, box-shadow 200ms linear;
+  }
+  .card-body {
+    height: 140px; /* Set a fixed height for the card body */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Add ellipsis (...) for text overflow */
+  }
+
+  .card-title {
+    margin-bottom: 5px; /* Add some space between title and price */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for text overflow */
+  }
+
+  .card:hover {
+    transform: scale(1.04);
+    box-shadow: 2px 2px 10px rgba(104, 176, 176, 0.3);
+    cursor: pointer;
+  }
+  /* a{
+    color: aliceblue;
+    height: 30px;
+    width:170%;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 5px 110px;
+    /* justify-content: center; */
+  
+  a:hover {
+    background-color: rgb(24, 39, 96);
+  }
+ 
+</style>

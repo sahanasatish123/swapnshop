@@ -1,0 +1,127 @@
+<% layout('layouts/boilerplate') %>
+<div class="user-column">
+    <!-- User details will be displayed in this column -->
+    <div class="user-details card">
+        <div class="card-body">Username: <%= user.username %></div>
+        <div class="card-body">Email ID: <%= user.email %></div>
+        <div class="card-body">Address: <%= user.address %></div>
+    </div>
+</div>
+<div class="container">
+    <div class="order-columns card">
+        <!-- Orders and new orders will be displayed in separate columns -->
+        <div class="left-column">
+            <!-- Display completed orders -->
+            <h4>Order Details</h4>
+            <% user.orders.forEach(order => { %>
+                <% if (order.products.length > 0) { %>
+                    <!-- Display each order in a separate box -->
+                    <div class="order-box">
+                        <% order.products.forEach(item => { %>
+                            <div class="product-container">
+                                <div class="product-details">
+                                    <!-- Check if product exists before accessing properties -->
+                                    <% if (item.product) { %>
+                                        <h5>Product Name: <%= item.product.name %></h5>
+                                        <p>Quantity: <%= item.quantity %></p>
+                                    <% } else { %>
+                                        <p>Product Not Found</p>
+                                    <% } %>
+                                </div>
+                            </div>
+                        <% }) %>
+                        <!-- Display the total price for each order -->
+                        <div class="total-price">
+                            <p>Total Price: $<%= order.totalPrice.toFixed(2) %></p>
+                        </div>
+                    </div>
+                <% } %>
+            <% }) %>
+        </div>
+
+        <div class="right-column">
+            <!-- Display new orders -->
+            <% if (user.newOrders.length > 0) { %>
+                <div class="new-orders">
+                    <h4>New Orders</h4>
+                    <% user.newOrders.forEach(newOrder => { %>
+                        <div class="new-order-box">
+                            <h4><%= newOrder.userName %></h4>
+                            <% if (newOrder.products.length > 0) { %>
+                                <% newOrder.products.forEach(item => { %>
+                                    <div class="product-container">
+                                        <div class="product-details">
+                                            <!-- Check if product exists before accessing properties -->
+                                            <% if (item.product) { %>
+                                                <h5>Product Name: <%= item.product.name %></h5>
+                                                <p>Quantity: <%= item.quantity %></p>
+                                            <% } else { %>
+                                                <p>Product Not Found</p>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                <% }) %>
+                                <!-- Display the total price for each new order -->
+                            <% } %>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<style>
+    .user-column{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .order-columns {
+        width: 100%;
+        display: flex;
+        flex-direction:row;
+    }
+
+    .left-column,
+    .right-column {
+        flex:1;
+        width: 48%; /* Adjusted to allow for some space between columns */
+        margin: 1%;
+    }
+
+    .order-box,
+    .new-order-box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .new-orders {
+        border: 1px solid green;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .product-container {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<script>
+    // You can keep your checkout button script here if needed
+</script>

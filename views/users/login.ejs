@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate') %>
+<div class="login-page">
+<form action="/login" method="POST" > 
+    <div class="card">
+        <div class="card-title"><h3>LOGIN</h3></div>
+        <div class="mb3">
+    <!-- <label for="username">enter username</label> -->
+    <input type="text" name="user[username]" placeholder="username" required>
+</div>
+<div class="mb3">
+    <!-- <label for="password">enter password</label> -->
+    <input type="password" name="user[password]" placeholder="password" required>
+</div class="mb-3" >
+
+    <button type="submit">submit</button>
+    <div>Dont have an account?<a href="/register">Register</a></div>
+</div>
+</form> 
+</div>
+<style>
+    *{
+        /* padding: 2px; */
+    }
+    .login-page{
+        padding: 20px;
+        display:flex;
+        justify-content: center;
+        text-align: center;
+        margin-left: auto;
+  margin-right: auto;
+  height:500px;
+  width: 100%;
+    }
+    input {
+        width:100%;
+        border-radius: 10px;
+        padding:10px;
+        height:40px;
+        border-color: aliceblue;
+    }
+    .card {
+        display: flex;
+        padding: 20px;
+        justify-content: space-around;
+        width:40vw;
+        height: 60vh;
+        border-radius: 20px;
+    }
+    button{
+        border-radius: 10px;
+        padding:10px;
+        border: none;
+        color: antiquewhite;
+        font-size: 20px;
+        background-color:cadetblue;
+    }
+</style>
+

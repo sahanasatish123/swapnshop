@@ -1,0 +1,105 @@
+<% layout('layouts/boilerplate') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .product-container {
+            display: flex;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .product-details {
+            flex: 3;
+            padding: 10px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .delete-icon {
+            cursor: pointer;
+            font-size: 24px;
+            margin-left: 10px;
+            color: #ff5858;
+        }
+
+        .delete-icon:hover {
+            color: #e03e3e;
+        }
+
+        .total-price {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .empty-cart-message {
+            text-align: center;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>YOUR CART</h2>
+    <div>
+        <% if (paintings.length === 0) { %>
+            <p class="empty-cart-message">Your cart is empty</p>
+        <% } else { %>
+            <% let totalPrice = 0; %>
+            <% for(let painting of paintings) { %>
+                <div class="product-container">
+                    <div class="product-image">
+                        <img src="<%= painting.product.images[0].url %>" alt="<%= painting.product.name %>">
+                    </div>
+                    <div class="product-details">
+                        <h5><%= painting.product.name %></h5>
+                        <h4>$<%= painting.product.price %></h4>
+                        <p>Quantity: <%= painting.quantity %></p>
+                        <p><%= painting.product.description %></p>
+                    </div>
+                    <a class="delete-icon" href="/remove-from-cart/<%= painting.product._id %>">&#128465;</a>
+                </div>
+                <% totalPrice += painting.product.price * painting.quantity; %>
+            <% } %>
+            <div class="total-price">
+                <a href="/checkout" class="checkout-button" style="color: #333;">Checkout</a>
+                <p>Total Price: $<%= totalPrice.toFixed(2) %></p>
+                <a href="/checkout" class="checkout-button" style="color: #333;">Checkout</a>
+            </div>
+       
+        <% } %>
+    </div>
+</body>
+</html>
