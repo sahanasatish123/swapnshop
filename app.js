@@ -70,8 +70,8 @@ app.use(
 
 app.set('views',path.join(__dirname,'views'));
 
-    const dburl='mongodb://127.0.0.1:27017/paintings'
-    const dbUrl=process.env.DB_URL|| dburl
+    // const dbUrl='mongodb://127.0.0.1:27017/paintings'
+    const dbUrl="mongodb+srv://saha_3485:RQsVY0apwR0MQeB8@mycluster.ckpwab6.mongodb.net/?retryWrites=true&w=majority&appName=mycluster"
     mongoose.connect(dbUrl);
     const db = mongoose.connection;
     db.on("error", console.error.bind(console, "connection error:"));

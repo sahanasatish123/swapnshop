@@ -11,7 +11,7 @@
   <h1 class="products-heading">PRODUCTS</h1>
   <div class="filter-container">
     <label for="categoryFilter">Filter by Category:</label>
-    <select id="categoryFilter" onchange="filterProducts()">
+    <select id="categoryFilter">
       <option value="all">All</option>
       <option value="jewelry">Jewelry</option>
       <option value="bags">Bags</option>
@@ -34,6 +34,7 @@
 </body>
 </html>
 <script>
+  document.getElementById('categoryFilter').addEventListener('change', filterProducts)
   function filterProducts(){
     console.log("hey")
     const catagory=document.getElementById('categoryFilter').value
@@ -41,7 +42,8 @@
     products.forEach(product=>{
       console.log(product)
       const productCategory = product.dataset.category;
-      if(catagory=="all"||productCategory==catagory){
+      console.log(catagory,product.dataset.category)
+      if(catagory=="all"||productCategory===catagory){
         product.style.display='block';
       }
       else{

@@ -52,7 +52,7 @@ const createPainting=async(req,res)=>{
     
     painting.sellername=req.session.user_id;
     await painting.save();
-    console.log(painting)
+    // console.log(painting)
    
  
    res.redirect(`/paintings/${painting.id}`)
@@ -95,13 +95,13 @@ const addToCart = async (req, res) => {
       } else {
           // If the product is not in the cart, add it
           const product = await Painting.findById(paintingId);
-          console.log(product)
+        //   console.log(product)
           user.cart.push({ product: product, quantity: 1 });
-          console.log(user.cart)
-          console.log(user.cart[0])
-          console.log(user.cart[0].product.name)
-          console.log(user.cart[0].product.images)
-          console.log(user.cart[0].quantity)
+    //       console.log(user.cart)
+    //       console.log(user.cart[0])
+    //       console.log(user.cart[0].product.name)
+    //       console.log(user.cart[0].product.images)
+    //       console.log(user.cart[0].quantity)
       }
 
       // Save the updated user

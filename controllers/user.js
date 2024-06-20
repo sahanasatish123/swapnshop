@@ -16,7 +16,7 @@ const signIn=(req,res)=>{
 const register=async(req,res)=>{
     try{
     const user=new User(req.body.user)
-    console.log(user)
+    // console.log(user)
     await user.save();
 
     req.session.user_id=user._id
@@ -24,7 +24,7 @@ const register=async(req,res)=>{
     res.redirect('/paintings')
     }
     catch(e){
-        console.log(e)
+        // console.log(e)
         res.redirect('/register')
     }
 }
@@ -35,7 +35,7 @@ const login=async(req,res)=>{
     const testUser=new User(req.body.user)
 
    const user=await User.findOne({username:testUser.username})
-    console.log(user)
+    // console.log(user)
    if(user){
          user.comparePassword(testUser.password, function(err, isMatch) {
          if (err) throw err;
@@ -53,7 +53,7 @@ const login=async(req,res)=>{
 }
 }
 const dashboard=async(req,res)=>{
-    console.log('in dashboad')
+    // console.log('in dashboad')
     const user = await User.findById(req.session.user_id).populate({
             path: 'orders.products.product',
             model: 'Painting',
@@ -110,7 +110,7 @@ async function removeFromCart(userId, productId) {
   
         // Save the updated user document
         await user.save();
-        console.log(user)
+        // console.log(user)
       }
     } catch (error) {
       throw error;
@@ -143,7 +143,7 @@ const checkout=async (req, res) => {
         });
         for (var orderItem of order) {
           const seller = await User.findById(orderItem.product.sellername);
-          console.log(seller)
+          // console.log(seller)
           if (seller) {
             seller.newOrders.push({
               userName: user.username,
@@ -155,7 +155,7 @@ const checkout=async (req, res) => {
         
             // Save the updated seller
             await seller.save();
-            console.log(seller)
+            // console.log(seller)
           } else {
             console.error(`Seller not found for product: ${orderItem.product.name}`);
           }
