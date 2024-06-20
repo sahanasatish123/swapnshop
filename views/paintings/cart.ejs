@@ -69,9 +69,17 @@
             color: #777;
             margin-top: 20px;
         }
+        .back-to-home {
+            display: block;
+            margin-top: 30px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
+    <a href="/paintings" class="back-to-home"><--Back to Home</a>
     <h2>YOUR CART</h2>
     <div>
         <% if (paintings.length === 0) { %>
@@ -81,7 +89,7 @@
             <% for(let painting of paintings) { %>
                 <div class="product-container">
                     <div class="product-image">
-                        <img src="<%= painting.product.images[0].url %>" alt="<%= painting.product.name %>">
+                        <img crossorigin="anonymous" src="<%= painting.product.images[0].url %>" alt="<%= painting.product.name %>">
                     </div>
                     <div class="product-details">
                         <h5><%= painting.product.name %></h5>

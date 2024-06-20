@@ -10,7 +10,7 @@
           <div class="carousel-item <%= i === 0 ? 'active' : ''%>">
             <% var u=img.url %>
             <% u=u.replace('/upload','/upload/w_500') %>
-            <img src="<%=u %>" class="d-block" alt="">
+            <img crossorigin="anonymous" src="<%=u %>" class="d-block" alt="">
           </div>
           <% }) %>
         </div>
@@ -38,11 +38,11 @@
         <% if(req.session.user_id==painting.sellername._id){ %>
         
           <span>
-            <a href="/paintings/<%=painting._id %>/edit" class="submit" style="bottom:10px; padding:5px 5px; background-color: rgb(78, 97, 159);color: aliceblue; border: none;"> Edit</a>
+            <a href="/paintings/<%=painting._id %>/edit" class="submit" style="border-radius:5px;bottom:10px; padding:7px 10px 7px 10px; background-color: rgb(78, 97, 159);color: aliceblue; border: none;">Edit  </a>
           </span>
           <span>
-            <form class="d-inline" action="/paintings/<%=painting._id%>?_method=DELETE" method="POST" class="card-link btn btn-da" style="margin-bottom:5px; margin-top: auto;">
-              <button style="bottom: 10px; padding:5px 5px; background-color:rgb(186, 87, 87);color: aliceblue; border: none;">Delete</button>
+            <form class="d-inline" action="/paintings/<%=painting._id%>?_method=DELETE" method="POST" class="card-link btn btn-da" >
+              <button style="top:-7px;bottom:0px; padding:5px 5px; background-color:rgb(186, 87, 87);color: aliceblue; border: none;">Delete</button>
             </form>
           </span>
   

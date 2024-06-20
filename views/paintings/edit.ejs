@@ -35,7 +35,7 @@
         <div >
           <% var u=img.url %>
             <% u=u.replace('/upload','/upload/w_400') %>
-            <img class="d-block" width="200px" src="<%= u %>" alt="">
+            <img crossorigin="anonymous" class="d-block" width="200px" src="<%= u %>" alt="">
             <div class="form-check-inline">
               <input type="checkbox" id="image<%=i%>" name="deleteImages[]" value="<%=img.filename %>">
             </div>

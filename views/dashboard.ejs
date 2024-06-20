@@ -52,8 +52,8 @@
                                     <div class="product-container">
                                         <div class="product-details">
                                             <!-- Check if product exists before accessing properties -->
-                                            <% if (item.product) { %>
-                                                <h5>Product Name: <%= item.product.name %></h5>
+                                            <% if (item) { %>
+                                                <h5>Product Name: <%= item.productName %></h5>
                                                 <p>Quantity: <%= item.quantity %></p>
                                             <% } else { %>
                                                 <p>Product Not Found</p>
