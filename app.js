@@ -126,6 +126,9 @@ const port=process.env.PORT||3000
 app.listen(port,()=>{
     console.log('listening')
 })
+app.get('/', (req, res) => {
+    res.redirect('/paintings');
+  });
 app.use("/paintings",paintingRoutes)
 app.use('/',userRoutes)
 
