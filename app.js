@@ -2,8 +2,6 @@ if(process.env.NODE_ENV!=="production")
 {
     require('dotenv').config();
 }
-
-const dbrl="mongodb+srv://saha_3485:RQsVY0apwR0MQeB8@mycluster.ckpwab6.mongodb.net/?retryWrites=true&w=majority&appName=mycluster"
 const express=require('express');
 const ejsMate = require('ejs-mate');
 const app=express();
