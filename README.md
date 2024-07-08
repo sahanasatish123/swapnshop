@@ -42,7 +42,6 @@ You can access the live project [here](https://swapnshop1.onrender.com/paintings
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contact Information](#contact-information)
 
 ## Installation
 
