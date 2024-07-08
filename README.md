@@ -51,7 +51,7 @@ To get a copy of this project up and running on your local machine, follow these
 1. Clone the repository:
     git clone https://github.com/username/swapnshop.git
 2. Go into the project directory:
-   cd amazing-project
+   cd swapnshop
 3.Install the necessary dependencies:
     npm install
 
