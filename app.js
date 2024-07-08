@@ -2,7 +2,6 @@ if(process.env.NODE_ENV!=="production")
 {
     require('dotenv').config();
 }
-console.log(process.env.Cloud_name,process.env.Api_key,process.env.Api_secret)
 const express=require('express');
 const ejsMate = require('ejs-mate');
 const app=express();
