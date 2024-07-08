@@ -66,8 +66,7 @@ const scriptSrcUrls = [
 
 app.set('views',path.join(__dirname,'views'));
 
-    // const dbUrl=process.env.DB_URL||'mongodb://127.0.0.1:27017/paintings'
-    const dbUrl='mongodb://127.0.0.1:27017/paintings'
+    const dbUrl=process.env.DB_URL||'mongodb://127.0.0.1:27017/paintings'
     mongoose.connect(dbUrl);
     const db = mongoose.connection;
     db.on("error", console.error.bind(console, "connection error:"));
