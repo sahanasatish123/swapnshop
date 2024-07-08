@@ -13,6 +13,7 @@ var session = require('express-session')
 const flash=require('connect-flash')
 const {storage}=require('../cloudinary')
 const upload=multer({storage});
+const { cloudinary } = require("../cloudinary");
 const index=async(req,res)=>{
     // req.flash('success','Successfully made a new campground!');
     
@@ -24,6 +25,7 @@ const index=async(req,res)=>{
    //req.flash('success','successfully loggedin');
 }
 const addnew=(req,res)=>{
+    console.log("adding new")
     res.render('paintings/new')
 }
 const showPainting=async(req,res)=>{
@@ -42,7 +44,7 @@ const showEditpage=async(req,res)=>{
     res.render('paintings/edit',{painting})
 }
 const createPainting=async(req,res)=>{
- 
+    console.log("creatig new painting");
     const painting=new Painting(req.body.painting);
     painting.images=req.files.map(f=>({url:f.path,filename:f.filename}))
    
@@ -52,7 +54,7 @@ const createPainting=async(req,res)=>{
     
     painting.sellername=req.session.user_id;
     await painting.save();
-    // console.log(painting)
+    console.log(painting);
    
  
    res.redirect(`/paintings/${painting.id}`)

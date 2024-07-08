@@ -7,8 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/navbar_footer_style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SYoprB+RT46AyQ5fyT6S5PQ/LvGz2LZuKZ+8U" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <title>Document</title>
 </head>
@@ -16,65 +18,36 @@
 <body>
   <nav class="navbar sticky-top navbar-expand-lg" style="background-color: rgb(10, 29, 52);">
     <div class="container-fluid">
-      <h3 class="navbar-brand" href="#"
-        style="color: rgb(226, 227, 217); display: flex; align-items: center;">ArtStudioss</h3>
+      <video autoplay muted loop playsinline style="width: 200px; height: auto;">
+        <source src="https://res.cloudinary.com/dfibrqhtl/video/upload/c_crop,g_south,h_141,w_415,y_200/v1720174247/Paintings/The_art_1_ki5ewv.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto" style="display: flex;justify-content: space-between;">
-          <a class="nav-link active" href="/paintings/home"
-            style="color:rgb(226, 227, 217);display: flex; align-items: center;" aria-current="page">Home</a>
-          <a class="nav-link" href="/dashboard" style="color:rgb(226, 227, 217);display: flex; align-items: center;">Dashboard</a>
-          <a class="nav-link" href="/paintings"
-            style="color:rgb(226, 227, 217);display: flex; align-items: center;">Products</a>
-          <a class="nav-link" href="/paintings/new"
-            style="color:rgb(226, 227, 217);display: flex; align-items: center;">AddProduct</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="background-color: rgb(10, 29, 52);">
+        <div class="navbar-nav ml-auto" style="background-color: rgb(10, 29, 52);">
+          <a class="nav-link" href="/paintings/home" aria-current="page">Home</a>
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+          <a class="nav-link" href="/paintings">Products</a>
+          <a class="nav-link" href="/paintings/new">AddProduct</a>
           <div class="users" style="right: 0; display: flex;">
-            <a class="nav-link" href="/logout"
-              style="color:rgb(226, 227, 217);display: flex; align-items: center;">Logout</a>
-            <a class="nav-link" href="/login" style="color:rgb(226, 227, 217);display:flex; align-items: center;">Login</a>
-
-            <a class="nav-link" href="/register"
-              style="color:rgb(226, 227, 217);display:flex; align-items: center;">Register</a>
-
+            <a class="nav-link" href="/login">Login</a>
           </div>
-          <div class="mycart" style="display: flex; align-items: center;position:absolute;right:30px">
-            <a class="cart-icon" href="/cart" style="color: rgb(226, 227, 217); font-size: 24px;right:0px">&#128722;</a>
+          <a class="nav-link" href="/register">Register</a>
+          <a class="nav-link" href="/logout">Logout</a>
+          <div class="mycart">
+            <a class="cart-icon" href="/cart">&#128722;</a>
           </div>
         </div>
       </div>
     </div>
   </nav>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
-
-<style>
-  
-  a {
-    color: rgb(226, 227, 217);
-  }
-
-  .navbar {
-    font-family: "Salsa", cursive;
-    font-size: 18px;
-    padding: 2px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  body {
-    background-color: rgb(244, 241, 221);
-  }
-
-  label {
-    color: rgb(27, 21, 14);
-  }
-
-  .mycart {
-    
-
-  }
-</style>

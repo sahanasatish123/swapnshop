@@ -1,9 +1,9 @@
 
 
 <% layout('layouts/boilerplate') %>
-
+<link rel="stylesheet" href="\stylesheets\style.css">
 <div class="container mt-5">
-  <h4 >ENTER PRODUCT DETAILS</h4>
+  <h4 class="heading">ENTER PRODUCT DETAILS</h4>
   <form class="row g-3 needs-validation form-floating" action="/paintings" method="POST" novalidate enctype="multipart/form-data">
 
     <!-- Left Column -->
@@ -51,22 +51,7 @@
     </div>
 
     <div class="col-12">
-      <button type="submit">Submit</button>
+      <button class="newbutton" type="submit">Submit</button>
     </div>
   </form>
 </div>
-<style>
-  button {
-    background-color: rgb(25, 41, 86);
-    color: azure;
-    height: 40px;
-    border-radius: 5px;
-    width:100px;
-    margin:10px;
-  }
-  input{
-    height: 45px;
-    border-color: rgba(210, 199, 199, 0.646);
-  }
-
-</style>

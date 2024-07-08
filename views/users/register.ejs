@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate') %>
-
+<link rel="stylesheet" href="\stylesheets\register.css">
 <div class="login-page">
 <form action="/register" method="POST"> 
     <div class="card">
@@ -36,51 +36,4 @@
        console.log(e) 
     }
 </script>
-<style>
-
-    .login-page{
-        padding: 20px;
-        display:flex;
-        justify-content: center;
-        text-align: center;
-        margin-left: auto;
-  margin-right: auto;
-  height:500px;
-  width: 100%;
-    }
-    input {
-        width:100%;
-        border-radius: 10px;
-        padding:10px;
-        height:40px;
-        border-color: aliceblue;
-    }
-    .card {
-        display: flex;
-        padding: 20px;
-        display: flex;
-        /* justify-content:space-between; */
-        display:flex;
-        justify-content: center;
-        text-align: center;
-        width:40vw;
-        height: 70vh;
-        border-radius: 20px;
-        margin-top:0px;
-    }
-    p{margin-top: 15px;
-        margin-bottom:5px;
-        font-size: 12px;
-        color: darkgrey;
-    }
-    button{
-        border-radius: 10px;
-        
-        padding:8px;
-        border: none;
-        color: antiquewhite;
-        font-size: 20px;
-        background-color:cadetblue;
-    }
-</style>
 

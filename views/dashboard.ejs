@@ -1,20 +1,60 @@
 <% layout('layouts/boilerplate') %>
 <div class="user-column">
     <!-- User details will be displayed in this column -->
-    <div class="user-details card">
-        <div class="card-body">Username: <%= user.username %></div>
-        <div class="card-body">Email ID: <%= user.email %></div>
-        <div class="card-body">Address: <%= user.address %></div>
-    </div>
+    <h4>USER DETAILS</h4>
+     <div class="user">
+            <div class="user-details card">
+                <div class="card-body">USERNAME: <%= user.username %></div>
+                <div class="card-body">EMAIL ID: <%= user.email %></div>
+                <div class="card-body">ADDRESS: <%= user.address %></div>
+            </div>
+        </div>
+   
+   
 </div>
 <div class="container">
     <div class="order-columns card">
         <!-- Orders and new orders will be displayed in separate columns -->
+        
+
+        <div class="right-column">
+            <!-- Display new orders -->
+            <% if (user.newOrders.length > 0) { %>
+                <div class="new-orders">
+                    <h4>New Orders</h4>
+                    <% user.newOrders.forEach(newOrder => { %>
+                        <div class="new-order-box">
+                            <h5><%= newOrder.userName %></h5>
+                            
+                            <% if (newOrder.products.length > 0) { %>
+                                <% newOrder.products.forEach(item => { %>
+                                    <div class="product-container">
+                                        <div class="product-details">
+                                            <!-- Check if product exists before accessing properties -->
+                                            <% if (item) { %>
+                                                <h5>Product Name: <%= item.productName %></h5>
+                                                <p>Quantity: <%= item.quantity %></p>
+                                            <% } else { %>
+                                                <p>Product Not Found</p>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                <% }) %>
+                                <h6>Address: <%= newOrder.Address %></h6>
+                                <!-- Display the total price for each new order -->
+                            <% } %>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } %>
+        </div>
         <div class="left-column">
             <!-- Display completed orders -->
             <h4>Order Details</h4>
             <% user.orders.forEach(order => { %>
+                
                 <% if (order.products.length > 0) { %>
+                    
                     <!-- Display each order in a separate box -->
                     <div class="order-box">
                         <% order.products.forEach(item => { %>
@@ -38,40 +78,18 @@
                 <% } %>
             <% }) %>
         </div>
-
-        <div class="right-column">
-            <!-- Display new orders -->
-            <% if (user.newOrders.length > 0) { %>
-                <div class="new-orders">
-                    <h4>New Orders</h4>
-                    <% user.newOrders.forEach(newOrder => { %>
-                        <div class="new-order-box">
-                            <h4><%= newOrder.userName %></h4>
-                            <% if (newOrder.products.length > 0) { %>
-                                <% newOrder.products.forEach(item => { %>
-                                    <div class="product-container">
-                                        <div class="product-details">
-                                            <!-- Check if product exists before accessing properties -->
-                                            <% if (item) { %>
-                                                <h5>Product Name: <%= item.productName %></h5>
-                                                <p>Quantity: <%= item.quantity %></p>
-                                            <% } else { %>
-                                                <p>Product Not Found</p>
-                                            <% } %>
-                                        </div>
-                                    </div>
-                                <% }) %>
-                                <!-- Display the total price for each new order -->
-                            <% } %>
-                        </div>
-                    <% }) %>
-                </div>
-            <% } %>
-        </div>
     </div>
+
 </div>
 
 <style>
+    .user{
+        display:flex;
+        background-color: rgb(207, 238, 190);
+        justify-content: space-around;
+        width:70%;
+        border-radius: 10px;
+    }
     .user-column{
         margin-bottom: 20px;
         width: 100%;
@@ -81,10 +99,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        /* margin: none; */
     }
 
     .card {
-        border: 1px solid #ccc;
+        /* border: 1px solid #ccc; */
         padding: 15px;
         margin-bottom: 20px;
     }
@@ -93,6 +112,9 @@
         width: 100%;
         display: flex;
         flex-direction:row;
+        background-color: transparent;
+        border: none;
+        
     }
 
     .left-column,
@@ -100,6 +122,9 @@
         flex:1;
         width: 48%; /* Adjusted to allow for some space between columns */
         margin: 1%;
+        
+        padding:10px;
+        border-radius:10px;
     }
 
     .order-box,
@@ -107,10 +132,14 @@
         border: 1px solid #ccc;
         padding: 15px;
         margin-bottom: 20px;
+        background-color: rgb(177, 205, 161);
+        border-radius: 10px;
+        transform: scale(1.04);
+    box-shadow: 5px 5px 10px rgba(8, 4, 50, 0.3);
     }
 
     .new-orders {
-        border: 1px solid green;
+        /* border: 1px solid green; */
         padding: 15px;
         margin-top: 20px;
     }
@@ -119,6 +148,46 @@
         border-bottom: 1px solid #ccc;
         padding-bottom: 10px;
         margin-bottom: 10px;
+        
+    }
+    .user-details{
+        width:80%;
+        color: rgb(31, 36, 87);
+        background-color: rgb(207, 238, 190);
+        border:none;
+    }
+    .card-body{
+        font-size: 20px;
+        margin:-5px;
+    }
+    h4{
+        color: rgb(201, 221, 225);
+    }
+    @media(max-width:740px){
+        .user-details{
+            width:100%;
+        }
+        .user{
+            width:100%;
+        }
+        svg{
+            display: none;
+        }
+        .order-columns {
+            flex-direction: column;
+            }
+            .order-box,
+            .new-order-box {
+                padding: auto;
+            }
+            .left-column,
+            .right-column {
+                width: 100%;
+            }
+            .card{
+                padding:1px;
+            }
+
     }
 </style>
 

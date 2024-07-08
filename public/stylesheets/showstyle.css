@@ -1,0 +1,198 @@
+.addtocart{
+    margin: 10px; 
+    padding:5px 5px;
+    background-color: rgb(73, 137, 139);
+    color: aliceblue;
+    border: none;
+    margin-left: 0px;
+    border-radius: 5px;
+    height: 35px;
+    position: absolute;
+    bottom: 5px;
+  }
+  .delete{
+    /* top:-7px;
+    bottom:0px; */
+    background-color:rgb(159, 66, 66);
+    color: aliceblue;
+    border-radius: 5px;
+    border: none;
+  }
+  .edit{
+    border-radius:5px;
+    /* bottom:10px; */
+    /* padding:8px 10px 9px 10px; */
+    background-color: rgb(64, 83, 148);
+    color: aliceblue;
+     border: none;
+  }
+  .edit, .delete{
+    height:39px;
+    padding:7px 10px 7px 10px;
+  }
+  .edit:hover{
+    background-color: rgb(48, 69, 139);
+  }
+  .delete:hover{
+    background-color: rgb(139, 51, 51);
+  }
+  .carousel-control-prev, .carousel-control-next{
+    height: 50px;
+    width: 50px;
+    outline: black;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  a.cardshow{
+    margin: 10px;
+  }
+  
+  .corousel{
+    display: flex;
+    justify-content:space-around;
+    /* max-width: 700px; */
+    border-style: solid;
+    border-color: black;
+    width:75%;
+    /* object-fit:scale-down; */
+    /* margin: 0 auto; */
+    /* display:block; */
+    left:-10px;
+  }
+  
+  .cardshow{
+    padding-left: 1%;
+    /* margin-left: 2%; */
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(234, 246, 226);
+  }
+  .submit{
+    bottom:2px;
+  }
+  span{
+    position: relative;
+    width: 100px;
+    margin: 5px;
+  }
+  
+  .showimg{
+    border-color: black;
+    height:75%;
+    width:75%;
+    object-fit:scale-down;
+    border-radius: 5px;
+    margin-left:12.5%;
+    margin-right:12.5%;
+    /* height: 300px; */
+  } 
+  .images{
+    flex:1;
+  }
+  .info{
+    margin-right:5%;
+    flex:1;
+  }
+  .row{
+    flex-direction: row;
+  }
+  @media(max-width:740px){
+    .row{
+        flex-direction: column;
+    }
+    .info{
+      width:90%;
+      margin:5% 5% 5% 5%;
+    }
+    .images{
+      width:95%;
+    }
+      .cardshow{
+        margin:none;
+        padding: none;
+      }
+  }
+ 
+  /* .addtocart {
+    margin: 10px;
+    padding: 5px;
+    background-color: rgb(73, 137, 139);
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    width: 100%; 
+    text-align: center;
+    box-sizing: border-box; 
+  }
+  
+  .delete {
+    padding: 8px 10px;
+    background-color: rgb(159, 66, 66);
+    color: aliceblue;
+    border-radius: 5px;
+    border: none;
+    width: auto; 
+    text-align: center; 
+    box-sizing: border-box;
+  }
+  
+  .edit {
+    padding: 8px 10px;
+    background-color: rgb(64, 83, 148);
+    color: aliceblue;
+    border-radius: 5px;
+    border: none;
+    width: auto; 
+    text-align: center;
+    box-sizing: border-box;
+    
+  }
+  .btn{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+  
+  .cardshow {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: rgb(234, 246, 226);
+  }
+  
+  .showimg {
+    width: 100%;
+    height: auto;
+    max-width: 100%; 
+    border: 1px solid black;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+      display: none; 
+    }
+    
+    .addtocart,
+    .delete,
+    .edit {
+      width: 100%;
+    }
+  
+    .cardshow {
+      margin: 10px; 
+      padding: 10px;
+    }
+  }
+   */

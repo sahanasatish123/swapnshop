@@ -1,18 +1,19 @@
 <% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="\stylesheets\showstyle.css">
 <a href="/paintings" style="margin-bottom:5px;color: rgb(32, 32, 63);"> <--- show products</a>
 <div class="mb-3 mt-2">
  
   <div class="row">
-    <div class="col-4">
-      <div id="carouselExample" class="carousel slide " width="400" >
+    <div class="images">
+      <div id="carouselExample" class="mycorou carousel slide ">
         <div class="carousel-inner">
           <% painting.images.forEach((img, i) => {  %>
           <div class="carousel-item <%= i === 0 ? 'active' : ''%>">
             <% var u=img.url %>
-            <% u=u.replace('/upload','/upload/w_500') %>
-            <img crossorigin="anonymous" src="<%=u %>" class="d-block" alt="">
+            <img class="showimg" id="carousel-image" crossorigin="anonymous" src="<%=u %>" class="d-block" alt="">
           </div>
           <% }) %>
+         
         </div>
         <% if(painting.images.length > 1) {%>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -27,29 +28,32 @@
       </div>
     </div>
   
-    <div class="card mb-6 col-5 d-flex flex-column">
+    <div class="info card cardshow">
       <div class="card-body flex-grow-1">
         <h5><%= painting.name %></h5>
         <h4>$<%= painting.price %></h4>
         <h7>seller:<%= painting.sellername.username%></h7>
         <h6>Description: <%=painting.description %></h6>
-        <!-- <h5>Artist: </h5> -->        
+        <br>   
   
         <% if(req.session.user_id==painting.sellername._id){ %>
-        
+        <div class="btn">
           <span>
-            <a href="/paintings/<%=painting._id %>/edit" class="submit" style="border-radius:5px;bottom:10px; padding:7px 10px 7px 10px; background-color: rgb(78, 97, 159);color: aliceblue; border: none;">Edit  </a>
+            <form class="d-inline" action="/paintings/<%=painting._id %>/edit" class="card-link btn "">
+              <button class="edit" >Edit</button>
+            </form>
           </span>
           <span>
             <form class="d-inline" action="/paintings/<%=painting._id%>?_method=DELETE" method="POST" class="card-link btn btn-da" >
-              <button style="top:-7px;bottom:0px; padding:5px 5px; background-color:rgb(186, 87, 87);color: aliceblue; border: none;">Delete</button>
+              <button class="delete" >Delete</button>
             </form>
           </span>
+        </div>
   
         <% } else if(req.session.user_id) {%>
           <div class="ms-0">
             <form action="/paintings/<%=painting._id %>/cart" method="POST" style="margin-top: auto;">
-              <button style="margin: 10px; padding:5px 5px; background-color: cadetblue;color: aliceblue; border: none;">Add to Cart</button>
+              <button class="addtocart">Add to Cart</button>
             </form>
           </div>
         <%}%>
@@ -59,66 +63,12 @@
   </div>
 </div>
 
-<style>
-  .carousel-control-prev, .carousel-control-next{
-    height: 50px;
-    width: 50px;
-    outline: black;
-    background-color: rgba(0, 0, 0, 0.3);
-    background-size: 100%, 100%;
-    border-radius: 50%;
-    border: 1px solid black;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  a.card{
-    margin: 10px;
-  }
-  
-  .corousel{
-    max-width: 700px;
-    border-style: solid;
-    border-color: black;
-    object-fit: cover; /* Ensure the image covers the container */
-    margin: 0 auto; /* Center the image horizontally */
-    display: block;
-    left:-10px;
-  }
-  
-  .card{
-    padding-left: 10px;
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  .submit{
-    /* position: absolute; */
-    bottom:2px;
-  }
-  span{
-    position: relative;
-    width: 100px;
-    margin: 5px;
-  }
-  
-  img{
-    border-color: black;
-    height: 300px;
-  }
-  
-  button{
-    margin-left: 0px;
-    
-    border-radius: 5px;
-    height: 35px;
-    padding:10px;
-    position: absolute;
-    bottom: 5px;
-    background-color: aquamarine;
-  }
-  h5{
-    text-decoration: underline;
-  }
-  
-</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const img = document.getElementById('carousel-image');
+      const screenWidth = window.innerWidth;
+      const halfScreenWidth = Math.floor(screenWidth / 2);
+      const newSrc = img.src.replace('/upload', `/upload/w_${halfScreenWidth}`);
+      img.src = newSrc;
+  });
+</script>

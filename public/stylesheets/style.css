@@ -1,0 +1,245 @@
+/* //index*/
+
+
+/*new*/
+  .newbutton {
+    color: rgb(5, 57, 57);
+background-color: rgb(188, 243, 238);
+height: 40px;
+width:100px;
+border-radius: 5px;
+border-color: rgb(71, 90, 90);
+margin: 10px;
+margin-left: 0;
+margin-top: 0;
+  }
+  input{
+    height: 45px;
+    border-color: rgba(210, 199, 199, 0.646);
+  }
+  .form-label,.heading{
+    color: rgb(197, 230, 219);
+  }
+
+  /*cart*/
+  body {
+    font-family: 'Arial', sans-serif;   
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #e3cccc;
+}
+
+.product-container {
+    display: flex;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    flex: 1;
+    padding: 10px;
+}
+
+.product-details {
+    flex: 3;
+    padding: 10px;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.delete-icon {
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 10px;
+    color: #ff5858;
+}
+
+.delete-icon:hover {
+    color: #e03e3e;
+}
+
+.total-price {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #6ababa;
+    margin-top: 20px;
+}
+.back-to-home {
+    display: block;
+    margin-top: 30px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+h2{
+    color: white;
+}
+.checkout-button{
+    font-size: 20px;
+    color: rgb(204, 231, 231);
+    margin-bottom:20px;
+}
+
+/*checkout*/
+.checkout{
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 50px;
+  color: #333;
+}
+
+.checkout p {
+  color: #777;
+}
+
+.success-icon {
+  font-size: 80px;
+  color: #28a745;
+  margin-top: 30px;
+}
+.order{
+color: rgb(151, 240, 242);
+}
+.back-to-home {
+  display: block;
+  margin-top: 30px;
+  color: #83dadc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/*edit*/
+.deletelabel{
+  color: rgb(176, 230, 218);
+  margin: none;
+}
+  .editimg {  
+    width:200px; 
+    object-fit: fill;   
+}
+.editsubmit{
+color: rgb(5, 57, 57);
+background-color: rgb(188, 243, 238);
+height: 40px;
+width:100px;
+border-radius: 5px;
+border-color: rgb(71, 90, 90);
+}
+.edit{
+color: rgb(21, 20, 18);
+}
+.form-label{
+color: rgb(192, 240, 228);
+}
+
+
+/*show*/
+.addtocart{
+  margin: 10px; 
+  padding:5px 5px;
+  background-color: rgb(73, 137, 139);
+  color: aliceblue;
+  border: none;
+  margin-left: 0px;
+  border-radius: 5px;
+  height: 35px;
+  position: absolute;
+  bottom: 5px;
+}
+.delete{
+  top:-7px;
+  bottom:0px;
+  background-color:rgb(159, 66, 66);
+  color: aliceblue;
+  border-radius: 5px;
+  border: none;
+}
+.edit{
+  border-radius:5px;
+  bottom:10px;
+  padding:8px 10px 9px 10px;
+  background-color: rgb(64, 83, 148);
+  color: aliceblue;
+   border: none;
+}
+.edit, .delete{
+  height:39px;
+}
+.edit:hover{
+  background-color: rgb(48, 69, 139);
+}
+.delete:hover{
+  background-color: rgb(139, 51, 51);
+}
+.carousel-control-prev, .carousel-control-next{
+  height: 50px;
+  width: 50px;
+  outline: black;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+a.cardshow{
+  margin: 10px;
+}
+
+.corousel{
+  max-width: 700px;
+  border-style: solid;
+  border-color: black;
+  object-fit: cover; /* Ensure the image covers the container */
+  margin: 0 auto; /* Center the image horizontally */
+  display: block;
+  left:-10px;
+}
+
+.cardshow{
+  padding-left: 10px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(234, 246, 226);
+}
+.submit{
+  /* position: absolute; */
+  bottom:2px;
+}
+span{
+  position: relative;
+  width: 100px;
+  margin: 5px;
+}
+
+.showimg{
+  border-color: black;
+  height: 300px;
+}
+

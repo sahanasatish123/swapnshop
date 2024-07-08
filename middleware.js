@@ -2,6 +2,7 @@
 const {paintingSchema}=require('./schemas')
 const ExpressError=require('./utils/ExpressError')
 const validatePainting=(req,res,next)=>{
+    console.log("validated")
     const { error } = paintingSchema.validate(req.body.painting);
     console.log("validated")
     if (error) {
@@ -12,7 +13,7 @@ const validatePainting=(req,res,next)=>{
     }
 }
 const isLoggedIn=(req,res,next)=>{
-    console.log("req.user=",req);
+    // console.log("req.user=",req);
     if(!req.session.user_id)
     {
        // req.session.returnTo=req.originalUrl

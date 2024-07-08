@@ -1,48 +1,382 @@
-<% layout('layouts/boilerplate') %>
+<!-- <% layout('layouts/boilerplate') %>
+<div class="hero-section">
+    <p class="welcome">
+        "Discover a world of possibilities as you explore our marketplace that seamlessly blends buying and selling."
+    </p>
+</div>
+<div>
+    <div class="home_welcome-container">
+        <div style="font-size: 26px; color: white;">Alice Tate-</div>
+        <div class="home_welcome">
+            <br>
+            "From the moment I first explored your marketplace, I was captivated by the diverse range of products and the intuitive design that makes navigation a breeze. The fusion of buying and selling features creates a harmonious space where both buyers and sellers thrive."
+        </div>
+    </div>
+</div>
+<div class="content-section">
+    <div class="text-center">
+        <h3>Welcome Home</h3>
+        <p style="font-size: larger;">"Where effortlessly buy and sell products"</p>
+        <form action="/paintings">
+            <button class="btn">Click Here</button>
+        </form>
+    </div>
+    <div class="image-container">
+        <img src="https://res.cloudinary.com/dfibrqhtl/image/upload/w_500/v1706548163/Paintings/Video_20on_20Websites.jpg_patoie" class="responsive_image">
+    </div>
+</div>
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background:url('https://res.cloudinary.com/dfibrqhtl/image/upload/w_500/v1706548163/Paintings/Illustration-of-Selling-Products-Online-Payment_k6sdey.jpg') no-repeat center center;
+        background-size:cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .welcome {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 24px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .home_welcome-container {
+        padding: 20px;
+    }
+
+    .home_welcome {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        color: white;
+    }
+
+    .content-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        padding: 20px;
+    }
+
+    .text-center {
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        background-color: rgb(10, 29, 52);
+        margin-top: 20px;
+        border-radius: 20px;
+        color: white;
+        padding: 10px 20px;
+    }
+
+    .btn:hover {
+        transform: scale(1.04);
+        background-color: rgb(28, 30, 79);
+    }
+
+    .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .responsive_image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 740px) {
+        .welcome {
+            font-size: 16px;
+        }
+
+        .home_welcome {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .responsive_image {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style> -->
+
+<!-- <% layout('layouts/boilerplate') %>
+
 <div style="height:580px; width: 100%; overflow: hidden;">
-    <img src="	https://res.cloudinary.com/dfibrqhtl/image/upload/w_500/v1706548163/Paintings/Illustration-of-Selling-Products-Online-Payment_k6sdey.jpg" style="width:100%;position: absolute; top:0%; left:0%; " alt="">
-    <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgb(11, 51, 96); text-align: center; font-size: 28px;">
+    <img class="welcome_image" src="	https://res.cloudinary.com/dfibrqhtl/image/upload/w_500/v1706548163/Paintings/Illustration-of-Selling-Products-Online-Payment_k6sdey.jpg" style="width:100%;position: absolute; top:0%; left:0%; " alt="">
+    <p class="welcome">
         "Discover a world of possibilities as you explore our marketplace that seamlessly blends buying and selling."
     </p>
 </div>
 <div >
-    <!-- Left half for the picture -->
-    <div style="font-size: 26px;">Alice Tate-</div>
-    <div style="display: flex; height: 100px; align-items: center; justify-content: center; font-size: 26px;">
+    <div style="font-size: 26px; color: white;">Alice Tate-</div>
+    <div class="home_welcome">
         <br>
         "From the moment I first explored your marketplace, I was captivated by the diverse range of products and the intuitive design that makes navigation a breeze. The fusion of buying and selling features creates a harmonious space where both buyers and sellers thrive."</div>
+        
 </div>
 <div style="display: flex; height: 100vh; align-items: center; justify-content: center;">
-    <!-- Left half for the picture -->
-
-    <!-- Right half for the quote and button -->
-    <div style="flex: 1; text-align: center; padding: 20px; color: rgb(65, 45, 21);">
+  
+    <div style="flex: 1; text-align: center; padding: 20px; color: rgb(255, 255, 255);">
         <h3>Welcome Home</h3>
-        <!-- Add your quote here -->
-        <p style="font-size: larger;">"Where Art Finds Its Home: Discover, Collect, and Connect"</p>
+        <p style="font-size: larger;">"Where efforlessly buy and sell products"</p>
 
-        <!-- Your form and button go here -->
         <form action="/paintings">
-            <button style="background-color: beige; margin-top: 20px;">Click Here</button>
+            <button class="btn">Click Here</button>
         </form>
     </div>
-    <div style="flex: 1;">
-        <!-- Your image goes here -->
+    <div style="flex: 1;width:100%;">
         <img src="https://res.cloudinary.com/dfibrqhtl/image/upload/w_500/v1706548163/Paintings/Video_20on_20Websites.jpg_patoie" style="flex: 1;">
     </div>
 </div>
 <style>
-    img {
+    .welcome{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size:24px;
+    }
+    .home_welcome{
+        display: flex;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        color:white;
+    }
+    .welcome_image {
         width: 100%;
         /* height: auto; */
         margin: 0;
         margin-left: 0%;
         padding-left: 0%;
         padding: 0;
+        filter: brightness(30%);
     }
 
     button {
         background-color: beige;
         margin-top: 20px;
+        
+    }
+    .btn{
+        background-color:rgb(10, 29, 52);
+        margin-top: 20px;
+        border-radius: 20px;
+        color: white;
+    }
+    .btn:hover{
+        transform: scale(1.04);
+        background-color: rgb(28, 30, 79); 
+        margin-top: 20px;
+        border-radius: 20px;
+
+    }
+    @media(max-width:740px){
+        .welcome{
+            font-size:10px;
+        }
+    }
+</style> -->
+<% layout('layouts/boilerplate') %>
+
+<div class="hero-section">
+    <img class="welcome_image" src="https://res.cloudinary.com/dfibrqhtl/image/upload/w_500/v1706548163/Paintings/Illustration-of-Selling-Products-Online-Payment_k6sdey.jpg" alt="">
+    <p class="welcome" style="color: aliceblue;">
+        "Discover a world of possibilities as you explore our marketplace that seamlessly blends buying and selling."
+    </p>
+</div>
+
+<div class="flex-container">
+    <div class="welcome-text">
+        <h3>Welcome Home</h3>
+        <p>"Where you can effortlessly buy and sell products"</p>
+        <form action="/paintings">
+            <button class="btn">Click Here</button>
+        </form>
+    </div>
+    <div class="image-container">
+        <img src="https://res.cloudinary.com/dfibrqhtl/image/upload/w_500/v1706548163/Paintings/Video_20on_20Websites.jpg_patoie" class="responsive-image">
+    </div>
+</div>
+
+<div class="testimonial-section">
+    <div class="author">Alice Tate -</div>
+    <div class="home_welcome">
+        "From the moment I first explored your marketplace, I was captivated by the diverse range of products and the intuitive design that makes navigation a breeze. The fusion of buying and selling features creates a harmonious space where both buyers and sellers thrive."
+    </div>
+</div>
+<style>
+     * {
+        box-sizing: border-box;
+    } 
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: white;
+        background-color: #20232a; 
+    } 
+
+    .hero-section {
+        position: relative;
+        height: 500px; 
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .welcome_image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(30%);
+    }
+
+     .welcome {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 24px;
+        padding: 20px;
+        color: white;
+    }
+
+    .testimonial-section {
+        padding: 20px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.8); 
+        margin:10px;
+        border-radius: 10px;;
+    }
+
+    .author {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .home_welcome {
+        font-size: 20px;
+        line-height: 1.5;
+        /* padding: 0 20px; */
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        /* padding: 20px; */
+    }
+
+    .welcome-text, .image-container {
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .responsive-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px; 
+    }
+
+    .btn {
+        background-color: rgb(10, 29, 52);
+        margin-top: 20px;
+        border-radius: 20px;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        transform: scale(1.04);
+        background-color: rgb(28, 30, 79);
+    }
+
+    @media(max-width: 1024px) {
+        .welcome {
+            font-size: 20px;
+        }
+
+        .home_welcome {
+            font-size: 18px;
+        }
+    }
+
+    @media(max-width: 768px) {
+        .welcome {
+            font-size: 18px;
+        }
+
+        .home_welcome {
+            font-size: 16px;
+        }
+
+        .flex-container {
+            flex-direction: column;
+        }
+
+        .image-container {
+            order: -1;
+        }
+    }
+
+    @media(max-width: 480px) {
+        .welcome {
+            font-size: 14px;
+        }
+
+        .home_welcome {
+            font-size: 14px;
+        }
+
+        .flex-container {
+            padding: 10px;
+        }
+
+        .welcome-text, .image-container {
+            padding: 10px;
+        }
     }
 </style>
+

@@ -1,13 +1,13 @@
 
     <% layout('layouts/boilerplate') %>
-
-
+    <link rel="stylesheet" href="\stylesheets\style.css">
+    
 
   <form class="row g-3 needs-validation form-floating"  action="/paintings/<%= painting._id %>?_method=PUT" method="POST" novalidate enctype="multipart/form-data" >
 
-
+    <a href="/paintings" style="margin-bottom:5px;color: rgb(32, 32, 63);"> <--- show products</a>
     <div class="col-md-4" >
-      <label for="name" class="form-label" >enter the name of the painting</label>
+      <label for="name" class="form-label" >enter the name of the product</label>
       <input type="text" class="form-control"  name="painting[name]" id="name"value="<%= painting.name %>" required>
       <div class="valid-feedback">
         Looks good!
@@ -35,29 +35,20 @@
         <div >
           <% var u=img.url %>
             <% u=u.replace('/upload','/upload/w_400') %>
-            <img crossorigin="anonymous" class="d-block" width="200px" src="<%= u %>" alt="">
+            <img crossorigin="anonymous" class="editimg d-block" src="<%= u %>" alt="">
             <div class="form-check-inline">
               <input type="checkbox" id="image<%=i%>" name="deleteImages[]" value="<%=img.filename %>">
             </div>
-            <label for="image<%=i%>">delete</label>
+            <label class="deletelabel" for="image<%=i%>">delete</label>
           </div>
           <% })  %>
         </div>
     <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit </button>
+      <button class="editsubmit" type="submit">Submit </button>
+      <br>
+    <br>
     </div>
     
   </form>
- <style>
-    img {  
-width:100;
-height:100; 
-  
-object-fit: fill;   
-} 
-.edit{
-  color: rgb(21, 20, 18);
-}
- </style>
 
  

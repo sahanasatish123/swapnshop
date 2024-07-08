@@ -8,7 +8,7 @@ SALT_WORK_FACTOR = 10;
 const UserSchema=new Schema({
     username:{
         type:String,
-        requied:true,
+        required:true,
         unique: 'username already exists',
     },
     address:{type: String, required: true},
@@ -52,6 +52,10 @@ const UserSchema=new Schema({
           userName: {
               type: String,
               required: true,
+          },
+          Address: {
+            type:String,
+            required:true,
           },
           products: [
               {

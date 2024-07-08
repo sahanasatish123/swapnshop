@@ -83,7 +83,7 @@ const removeprod = async (req, res) => {
       // Redirect back to the cart page
       res.redirect(`/${userId}/cart`);
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       res.status(500).send('Internal Server Error');
     }
   };
@@ -146,13 +146,16 @@ const checkout=async (req, res) => {
           // console.log(seller)
           if (seller) {
             seller.newOrders.push({
-              userName: user.username,
+              
+              userName:user.username,
+              Address:user.address,
               products: {
                 productName: orderItem.product.name,
                 quantity: orderItem.quantity
               }
+              
             });
-        
+            console.log(seller)
             // Save the updated seller
             await seller.save();
             // console.log(seller)
@@ -170,7 +173,7 @@ const checkout=async (req, res) => {
         // Redirect or send a response as needed
         res.render('paintings/checkout'); // Redirect to a page indicating the order was successful
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         res.status(500).send('Internal Server Error');
     }
 };
