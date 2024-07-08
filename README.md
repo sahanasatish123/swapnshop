@@ -1,5 +1,5 @@
 ## Project Title
-SwapNShop
+SwapNShop- A comprehensive backend e-commerce platform with a responsive frontend.
 
 ## Description
 
